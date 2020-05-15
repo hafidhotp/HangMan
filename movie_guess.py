@@ -51,12 +51,9 @@ def play():
     
     while not game_over:
         new=""
-        try:
-            ch=int(input("Do you want to guess the 'letter'- 0 or 'name'- 1 "))
-        except ValueError :
-            ch=0
-        if ch==0:
-            letter=input("Enter your letter: ").upper()
+        ch=input("guess the movie: ")
+        if len(ch)==1:
+            letter=ch.upper()
             new_qn=reveal(letter,picked_movie,qn)
             for j in new_qn:
                 new+=j+" "
@@ -64,9 +61,8 @@ def play():
             x,y=checking(picked_movie,new)
             if y==True:
                 game_over=True
-            
         else:
-            guessed_word=input("Enter your word: ").upper()
+            guessed_word=ch.upper()
             x,y=checking(picked_movie,guessed_word)
             if y==True:
                 game_over=True
