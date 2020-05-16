@@ -48,7 +48,6 @@ def play():
     x=" ".join(qn)
     print(x)
     game_over=False
-    
     while not game_over:
         new=""
         ch=input("guess the movie: ")
